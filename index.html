@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avoncourt Packaging — Staff Forms</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #DEDBD1;
+    --ink: #211D19;
+    --ink-soft: #4A453D;
+    --tag-stock: #F1ECDD;
+    --tag-stock-shadow: #C9C2AC;
+    --amber: #C97E1E;
+    --amber-deep: #6B3F0C;
+    --amber-tint: #F3DEB9;
+    --red: #B23A25;
+    --red-deep: #5C1D11;
+    --red-tint: #F1CFC5;
+    --steel: #3E6C8E;
+    --steel-deep: #1F3C50;
+    --steel-tint: #DCE7EE;
+    --line: #A8A296;
+    --radius: 4px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: -1px -1px;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--ink);
+    color: var(--tag-stock);
+    padding: 34px 24px 30px;
+    border-bottom: 6px solid var(--amber);
+  }
+
+  .header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .plant-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #B7AF9C;
+    margin: 0 0 6px;
+  }
+
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: clamp(30px, 5vw, 46px);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .location {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: #9A9382;
+    text-align: right;
+    letter-spacing: 0.02em;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+  }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .tag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 44px 36px;
+  }
+
+  .tag-wrap {
+    position: relative;
+    padding-top: 34px;
+  }
+
+  .string {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 34px;
+  }
+
+  .tag {
+    display: block;
+    position: relative;
+    background: var(--tag-stock);
+    border: 1px solid var(--tag-stock-shadow);
+    border-radius: var(--radius);
+    padding: 30px 26px 26px;
+    text-decoration: none;
+    color: var(--ink);
+    box-shadow: 5px 6px 0 var(--tag-stock-shadow);
+    transform: rotate(-1.2deg);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .tag-wrap:nth-child(even) .tag { transform: rotate(1deg); }
+
+  .tag:hover, .tag:focus-visible {
+    transform: rotate(0deg) translateY(-2px);
+    box-shadow: 7px 9px 0 var(--tag-stock-shadow);
+  }
+
+  .punch {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--line);
+  }
+
+  .category-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 8px;
+    border-radius: var(--radius) 0 0 var(--radius);
+  }
+
+  .tag.amber .category-strip { background: var(--amber); }
+  .tag.red .category-strip { background: var(--red); }
+  .tag.steel .category-strip { background: var(--steel); }
+
+  .tag-no {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+    padding-left: 8px;
+  }
+
+  .tag.amber .tag-no { color: var(--amber-deep); }
+  .tag.red .tag-no { color: var(--red-deep); }
+  .tag.steel .tag-no { color: var(--steel-deep); }
+
+  .tag-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 0.01em;
+    margin: 0 0 10px;
+    padding-left: 8px;
+    line-height: 1.08;
+  }
+
+  .tag-desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0 0 22px;
+    padding-left: 8px;
+  }
+
+  .tag-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    padding: 9px 8px 0 8px;
+    border-top: 1px dashed var(--line);
+    width: 100%;
+  }
+
+  .tag.amber .tag-open { color: var(--amber-deep); }
+  .tag.red .tag-open { color: var(--red-deep); }
+  .tag.steel .tag-open { color: var(--steel-deep); }
+
+  .tag-open svg { flex-shrink: 0; }
+
+  .more-note {
+    margin-top: 50px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    border-left: 2px solid var(--line);
+    padding-left: 14px;
+  }
+
+  footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 480px) {
+    .header-inner { align-items: flex-start; }
+    .location { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <p class="plant-name">Avoncourt Packaging Ltd</p>
+      <h1>Staff forms</h1>
+    </div>
+    <div class="location">Ballycurreen Industrial Estate<br>Cork, Ireland</div>
+  </div>
+</header>
+
+<main>
+  <p class="section-label">Live forms</p>
+
+  <div class="tag-grid">
+
+    <div class="tag-wrap">
+      <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+        <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+      </svg>
+      <a class="tag amber" href="https://finishedgoodshold.netlify.app/">
+        <span class="category-strip"></span>
+        <span class="punch"></span>
+        <p class="tag-no">TAG NO. 001 — QUALITY HOLD</p>
+        <p class="tag-title">Goods on hold</p>
+        <p class="tag-desc">Flag finished goods for a quality hold and track release.</p>
+        <span class="tag-open">
+          Open form
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="tag-wrap">
+      <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+        <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+      </svg>
+      <a class="tag red" href="https://accident-reporting-avn.netlify.app/">
+        <span class="category-strip"></span>
+        <span class="punch"></span>
+        <p class="tag-no">TAG NO. 002 — HEALTH &amp; SAFETY</p>
+        <p class="tag-title">Accident report</p>
+        <p class="tag-desc">Report an accident, injury or near miss on site.</p>
+        <span class="tag-open">
+          Open form
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="tag-wrap">
+      <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+        <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+      </svg>
+      <a class="tag steel" href="https://returntoworkform.netlify.app/">
+        <span class="category-strip"></span>
+        <span class="punch"></span>
+        <p class="tag-no">TAG NO. 003 — HR</p>
+        <p class="tag-title">Return to work</p>
+        <p class="tag-desc">Log a return to work interview after an absence.</p>
+        <span class="tag-open">
+          Open form
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+
+  </div>
+
+  <p class="more-note">More forms are added to this board as they go live.</p>
+</main>
+
+<footer>
+  Internal use only — Avoncourt Packaging Ltd
+</footer>
+
+</body>
+</html>
