@@ -23,6 +23,9 @@
     --steel: #3E6C8E;
     --steel-deep: #1F3C50;
     --steel-tint: #DCE7EE;
+    --moss: #6E7B4F;
+    --moss-deep: #333B22;
+    --moss-tint: #E4E7D8;
     --line: #A8A296;
     --radius: 4px;
   }
@@ -178,6 +181,7 @@
   .tag.amber .category-strip { background: var(--amber); }
   .tag.red .category-strip { background: var(--red); }
   .tag.steel .category-strip { background: var(--steel); }
+  .tag.moss .category-strip { background: var(--moss); }
 
   .tag-no {
     font-family: 'IBM Plex Mono', monospace;
@@ -191,6 +195,7 @@
   .tag.amber .tag-no { color: var(--amber-deep); }
   .tag.red .tag-no { color: var(--red-deep); }
   .tag.steel .tag-no { color: var(--steel-deep); }
+  .tag.moss .tag-no { color: var(--moss-deep); }
 
   .tag-title {
     font-family: 'Oswald', sans-serif;
@@ -228,6 +233,7 @@
   .tag.amber .tag-open { color: var(--amber-deep); }
   .tag.red .tag-open { color: var(--red-deep); }
   .tag.steel .tag-open { color: var(--steel-deep); }
+  .tag.moss .tag-open { color: var(--moss-deep); }
 
   .tag-open svg { flex-shrink: 0; }
 
@@ -317,6 +323,23 @@
         <p class="tag-no">TAG NO. 003 — HR</p>
         <p class="tag-title">Return to work</p>
         <p class="tag-desc">Log a return to work interview after an absence.</p>
+        <span class="tag-open">
+          Open form
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="tag-wrap">
+      <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+        <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+      </svg>
+      <a class="tag moss" href="https://it-issues-log.netlify.app/">
+        <span class="category-strip"></span>
+        <span class="punch"></span>
+        <p class="tag-no">TAG NO. 004 — IT</p>
+        <p class="tag-title">IT issue log</p>
+        <p class="tag-desc">Log a minor IT issue, or check progress on one you've already reported.</p>
         <span class="tag-open">
           Open form
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
