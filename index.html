@@ -103,6 +103,14 @@
     padding: 56px 24px 40px;
   }
 
+  .form-group {
+    margin-bottom: 56px;
+  }
+
+  .form-group:last-of-type {
+    margin-bottom: 0;
+  }
+
   .section-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12.5px;
@@ -112,7 +120,7 @@
     margin: 0 0 28px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
   }
 
   .section-label::after {
@@ -121,6 +129,18 @@
     height: 1px;
     background: var(--line);
   }
+
+  .section-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .section-dot.amber { background: var(--amber); }
+  .section-dot.red { background: var(--red); }
+  .section-dot.steel { background: var(--steel); }
+  .section-dot.moss { background: var(--moss); }
 
   .tag-grid {
     display: grid;
@@ -189,20 +209,6 @@
   .tag.steel .category-strip { background: var(--steel); }
   .tag.moss .category-strip { background: var(--moss); }
 
-  .tag-no {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11.5px;
-    letter-spacing: 0.08em;
-    color: var(--ink-soft);
-    margin: 0 0 14px;
-    padding-left: 8px;
-  }
-
-  .tag.amber .tag-no { color: var(--amber-deep); }
-  .tag.red .tag-no { color: var(--red-deep); }
-  .tag.steel .tag-no { color: var(--steel-deep); }
-  .tag.moss .tag-no { color: var(--moss-deep); }
-
   .tag-title {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
@@ -211,6 +217,7 @@
     letter-spacing: 0.01em;
     margin: 0 0 10px;
     padding-left: 8px;
+    padding-top: 2px;
     line-height: 1.08;
   }
 
@@ -281,95 +288,129 @@
 </header>
 
 <main>
-  <p class="section-label">Live forms</p>
 
-  <div class="tag-grid">
+  <div class="form-group">
+    <p class="section-label"><span class="section-dot amber"></span>Quality</p>
+    <div class="tag-grid">
 
-    <div class="tag-wrap">
-      <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
-        <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
-      </svg>
-      <a class="tag amber" href="https://finishedgoodshold.netlify.app/">
-        <span class="category-strip"></span>
-        <span class="punch"></span>
-        <p class="tag-no">TAG NO. 001 — QUALITY HOLD</p>
-        <p class="tag-title">Goods on hold</p>
-        <p class="tag-desc">Flag finished goods for a quality hold and track release.</p>
-        <span class="tag-open">
-          Open form
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </a>
+      <div class="tag-wrap">
+        <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+          <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+        </svg>
+        <a class="tag amber" href="https://finishedgoodshold.netlify.app/">
+          <span class="category-strip"></span>
+          <span class="punch"></span>
+          <p class="tag-title">Goods on hold</p>
+          <p class="tag-desc">Flag finished goods for a quality hold and track release.</p>
+          <span class="tag-open">
+            Open form
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+
     </div>
+  </div>
 
-    <div class="tag-wrap">
-      <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
-        <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
-      </svg>
-      <a class="tag red" href="https://accident-reporting-avn.netlify.app/">
-        <span class="category-strip"></span>
-        <span class="punch"></span>
-        <p class="tag-no">TAG NO. 002 — HEALTH &amp; SAFETY</p>
-        <p class="tag-title">Accident report</p>
-        <p class="tag-desc">Report an accident, injury or near miss on site.</p>
-        <span class="tag-open">
-          Open form
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </a>
+  <div class="form-group">
+    <p class="section-label"><span class="section-dot red"></span>Health &amp; safety</p>
+    <div class="tag-grid">
+
+      <div class="tag-wrap">
+        <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+          <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+        </svg>
+        <a class="tag red" href="https://accident-reporting-avn.netlify.app/">
+          <span class="category-strip"></span>
+          <span class="punch"></span>
+          <p class="tag-title">Accident report</p>
+          <p class="tag-desc">Report an accident, injury or near miss on site.</p>
+          <span class="tag-open">
+            Open form
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="tag-wrap">
+        <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+          <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+        </svg>
+        <a class="tag red" href="https://near-miss-reporting.netlify.app/">
+          <span class="category-strip"></span>
+          <span class="punch"></span>
+          <p class="tag-title">Near miss report</p>
+          <p class="tag-desc">Report something unsafe you spotted, before it becomes an accident.</p>
+          <span class="tag-open">
+            Open form
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+
     </div>
+  </div>
 
-    <div class="tag-wrap">
-      <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
-        <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
-      </svg>
-      <a class="tag steel" href="https://returntoworkform.netlify.app/">
-        <span class="category-strip"></span>
-        <span class="punch"></span>
-        <p class="tag-no">TAG NO. 003 — HR</p>
-        <p class="tag-title">Return to work</p>
-        <p class="tag-desc">Log a return to work interview after an absence.</p>
-        <span class="tag-open">
-          Open form
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </a>
+  <div class="form-group">
+    <p class="section-label"><span class="section-dot steel"></span>HR</p>
+    <div class="tag-grid">
+
+      <div class="tag-wrap">
+        <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+          <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+        </svg>
+        <a class="tag steel" href="https://returntoworkform.netlify.app/">
+          <span class="category-strip"></span>
+          <span class="punch"></span>
+          <p class="tag-title">Return to work</p>
+          <p class="tag-desc">Log a return to work interview after an absence.</p>
+          <span class="tag-open">
+            Open form
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+
     </div>
+  </div>
 
-    <div class="tag-wrap">
-      <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
-        <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
-      </svg>
-      <a class="tag moss" href="https://it-issues-log.netlify.app/">
-        <span class="category-strip"></span>
-        <span class="punch"></span>
-        <p class="tag-no">TAG NO. 004 — IT</p>
-        <p class="tag-title">IT issue log</p>
-        <p class="tag-desc">Log a minor IT issue, or check progress on one you've already reported.</p>
-        <span class="tag-open">
-          Open form
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </a>
+  <div class="form-group">
+    <p class="section-label"><span class="section-dot moss"></span>IT</p>
+    <div class="tag-grid">
+
+      <div class="tag-wrap">
+        <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+          <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+        </svg>
+        <a class="tag moss" href="https://it-issues-log.netlify.app/">
+          <span class="category-strip"></span>
+          <span class="punch"></span>
+          <p class="tag-title">IT issue log</p>
+          <p class="tag-desc">Log a minor IT issue, or check progress on one you've already reported.</p>
+          <span class="tag-open">
+            Open form
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="tag-wrap">
+        <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+          <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+        </svg>
+        <a class="tag moss" href="https://it-procedure-sign-off.netlify.app/">
+          <span class="category-strip"></span>
+          <span class="punch"></span>
+          <p class="tag-title">IT procedure sign-off</p>
+          <p class="tag-desc">Read the IT issue &amp; suspicious activity reporting procedure and confirm you've understood it.</p>
+          <span class="tag-open">
+            Open form
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+
     </div>
-
-    <div class="tag-wrap">
-      <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
-        <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
-      </svg>
-      <a class="tag moss" href="https://it-procedure-sign-off.netlify.app/">
-        <span class="category-strip"></span>
-        <span class="punch"></span>
-        <p class="tag-no">TAG NO. 005 — IT</p>
-        <p class="tag-title">IT procedure sign-off</p>
-        <p class="tag-desc">Read the IT issue &amp; suspicious activity reporting procedure and confirm you've understood it.</p>
-        <span class="tag-open">
-          Open form
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </span>
-      </a>
-    </div>
-
   </div>
 
   <p class="more-note">More forms are added to this board as they go live.</p>
