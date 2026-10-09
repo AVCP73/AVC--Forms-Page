@@ -32,6 +32,9 @@
     --moss: #6E7B4F;
     --moss-deep: #333B22;
     --moss-tint: #E4E7D8;
+    --plum: #6B4A7A;
+    --plum-deep: #34213D;
+    --plum-tint: #E8DDEE;
     --line: #A8A296;
     --radius: 4px;
   }
@@ -141,6 +144,7 @@
   .section-dot.red { background: var(--red); }
   .section-dot.steel { background: var(--steel); }
   .section-dot.moss { background: var(--moss); }
+  .section-dot.plum { background: var(--plum); }
 
   .tag-grid {
     display: grid;
@@ -208,6 +212,7 @@
   .tag.red .category-strip { background: var(--red); }
   .tag.steel .category-strip { background: var(--steel); }
   .tag.moss .category-strip { background: var(--moss); }
+  .tag.plum .category-strip { background: var(--plum); }
 
   .tag-title {
     font-family: 'Oswald', sans-serif;
@@ -247,6 +252,7 @@
   .tag.red .tag-open { color: var(--red-deep); }
   .tag.steel .tag-open { color: var(--steel-deep); }
   .tag.moss .tag-open { color: var(--moss-deep); }
+  .tag.plum .tag-open { color: var(--plum-deep); }
 
   .tag-open svg { flex-shrink: 0; }
 
@@ -323,6 +329,29 @@
 </header>
 
 <main>
+
+  <div class="form-group">
+    <p class="section-label"><span class="section-dot plum"></span>Production</p>
+    <div class="tag-grid">
+
+      <div class="tag-wrap">
+        <svg class="string" viewBox="0 0 60 34" aria-hidden="true">
+          <path d="M 24 0 Q 30 22 36 0" fill="none" stroke="#9A9382" stroke-width="1.5" />
+        </svg>
+        <a class="tag plum" href="https://daily-production-notes.netlify.app/">
+          <span class="category-strip"></span>
+          <span class="punch"></span>
+          <p class="tag-title">Daily Production Notes</p>
+          <p class="tag-desc">Today's schedule and changes with your own notes, shared actions and history. Supervisors &amp; managers, sign-in needed.</p>
+          <span class="tag-open">
+            Open
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </div>
 
   <div class="form-group">
     <p class="section-label"><span class="section-dot amber"></span>Quality</p>
